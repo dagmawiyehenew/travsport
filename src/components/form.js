@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
+import { Authenticator } from "../actions/auth";
+import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 /***
  * To do's
- *  1.create a form 
+ *  1.create a form
  *  2.Validate the form
  *  3.Login the user
- *  4.Save the credentials 
+ *  4.Save the credentials
  *  5.Re. auth the user every 3 mints if no use not active
  *  6.Logout user
  */
 function FormCompounent(props) {
+  let redirect = useNavigate();
   const [Loading, setLoading] = useState(false);
   const [Errors, setErrors] = useState([]);
 
@@ -24,11 +27,17 @@ function FormCompounent(props) {
     password: "",
   };
 
-  const onSubmit = (values) => {
-    
-    console.log(values);
+  const onSubmit = async (values) => {
+    Authenticator(values).then((res) => {
+      if (!res.error) {
+        redirect("/");
+        return;
+      }
+      setErrors(res.error);
+    });
   };
 
+  
   return Loading ? (
     "Loading..."
   ) : (
@@ -49,6 +58,7 @@ function FormCompounent(props) {
             autoComplete="off"
             className="form-control"
             title="Email"
+           
           />
           {errors.email && touched.email ? <div>{errors.email}</div> : null}
 
@@ -65,6 +75,7 @@ function FormCompounent(props) {
           <button type="submit" className="btn btn-primary btn-lg btn-block">
             Submit
           </button>
+          {Errors ? Errors : ""}
         </Form>
       )}
     </Formik>
