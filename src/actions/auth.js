@@ -6,6 +6,7 @@ export const Authenticator = ( async (credential) => {
                 setAuthorizationToken(res.data.token);
                 localStorage.setItem('token', res.data.token);
                 localStorage.setItem('credential', JSON.stringify(credential));
+                localStorage.setItem('isAuthenticated', true);
             }
             return res;
     }).catch((error) =>{

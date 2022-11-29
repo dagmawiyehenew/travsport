@@ -12,7 +12,7 @@ function PrivateLayout({ children }) {
 
   let userSession; // user session timer will be stored
   let redirectTo = useNavigate(); // user path to navigate the user
-  
+
   // 1. List user events
   const events = [
     "load",
@@ -40,13 +40,13 @@ function PrivateLayout({ children }) {
 
   const session = () => {
     // Set or update user session time
-    userSession = setTimeout(() => {
+   /* userSession = setTimeout(() => {
       resetSession(); // clear session
       Object.values(events).forEach((event) => {
         window.addEventListener(event, resetSession);
       });
       logoutUser(); // logout user
-    }, 4 * 60 * 1000);
+    }, 4 * 60 * 1000);*/
   };
 
   const logoutUser = () => {
