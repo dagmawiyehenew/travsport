@@ -54,7 +54,7 @@ You will need to be authenticated to use the backend API. Authenticate with an e
   - Authenticate with an email address and password
     - Session will last 5 minutes
     -  When the session expires, your user should automatically re- authenticate ?? 
-       -  No refresh toke endpoint provided. re-connect by credential or loggout user 
+       -  No refresh toke endpoint provided. re-connect by credential or logout user 
 - Race Status Display
   - Show hors race events stream update when horse stars and finishes
     - Horse number 
@@ -89,3 +89,15 @@ You will need to be authenticated to use the backend API. Authenticate with an e
 |--------- View
 |----------- Race
 |------------- Components
+
+
+#### To do's
+
+1 - Configurations and file structure
+2 - Auth branch
+   *  1.create a form 
+   *  2.Validate the form
+   *  3.Login the user
+   *  4.Save the credentials 
+   *  5.Re. auth the user every 3 mints if no use not active
+   *  6.Logout user
