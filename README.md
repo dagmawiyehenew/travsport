@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Getting Started with Create React App 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -38,3 +38,54 @@ If you aren't satisfied with the build tool and configuration choices, you can `
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+
+**Note: documentation for Travsport**
+
+### Project decription 
+
+We have built a simple horse race backend that runs a new race with six horses every minute of every day. The task is to build a React frontend (Two Screens: User Login & Race Status Display) that sub- scribe to via long-polling, and show these events. When a horse starts or finishes, an event is sent out in real time via a REST API.
+
+If no new events have been published within 15 seconds after a request has been made, the request is cancelled and the backend returns HTTP status 204. Then the user needs to make a new request.
+You will need to be authenticated to use the backend API. Authenticate with an email address, and the fixed password “PROVIDES BY TRAVSPORT”. Session will last 5 minutes. When the session expires, your user should automatically re- authenticate and continue receiving events.
+
+## Spacifications
+- User Login 
+  - Authenticate with an email address and password
+    - Session will last 5 minutes
+    -  When the session expires, your user should automatically re- authenticate ?? 
+       -  No refresh toke endpoint provided. re-connect by credential or loggout user 
+- Race Status Display
+  - Show hors race events stream update when horse stars and finishes
+    - Horse number 
+    - Horse name
+    - Hors race time
+
+## Endpoint 
+-  Root : http://35.207.169.147
+   -  Authentication : /auth
+   -  Race : /results
+
+##### configrations and dependencies
+
+- Endpoint
+  Config the root url in you package.json as a proxy 
+   
+- Dependencies
+  Installed dependencies 
+    "react-router": "^6.4.3",
+    "react-router-dom": "^6.4.3",
+
+
+##### Structure 
+
+|-- Containers
+|----- Layout
+|------- PrivateLayout 
+|--------- View
+|----------- Auth
+|------------- Components
+|------- PublicLayout
+|--------- View
+|----------- Race
+|------------- Components
