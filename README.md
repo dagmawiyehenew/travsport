@@ -101,3 +101,15 @@ You will need to be authenticated to use the backend API. Authenticate with an e
    *  4.Save the credentials 
    *  5.Re. auth the user every 3 mints if no use not active
    *  6.Logout user
+
+3 - Grant permisson och session expired   
+* Expired
+   * 1. List user events
+   * 2. Every time user visit the privet pages
+   *      clear the current user session time
+   *      reset the session the event
+   * 3. If use not active and session timed out? then logout user
+* Grant permisson
+  * Private route 
+  * Public route
+  
