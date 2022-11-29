@@ -12,9 +12,7 @@ function PrivateLayout({ children }) {
 
   let userSession; // user session timer will be stored
   let redirectTo = useNavigate(); // user path to navigate the user
-
-  const [ShowWarning, seShowWarning] = useState(false);
-  const [counter, setCounter] = React.useState(60);
+  
   // 1. List user events
   const events = [
     "load",
