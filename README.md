@@ -94,7 +94,7 @@ You will need to be authenticated to use the backend API. Authenticate with an e
 #### To do's
 
 1 - Configurations and file structure
-2 - Auth branch
+2 - Auth
    *  1.create a form 
    *  2.Validate the form
    *  3.Login the user
@@ -112,4 +112,15 @@ You will need to be authenticated to use the backend API. Authenticate with an e
 * Grant permisson
   * Private route 
   * Public route
+3 - Show a list of race results
+  * 1. Get list 
+  * 2. Filter horse list as start and finsish
+  * 3. Merge the filtered list 
+  * 4. Display list
+* Last (Make your life hard for as i did) resolve the problem without any added react hooks. 
+
+Optional : useQuery or redux saga is a perfect hook you possibly can use in this case. 
+
+
+
   
