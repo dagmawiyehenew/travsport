@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import './assets/app.css'
 import reportWebVitals from './reportWebVitals';
 import setAuthorizationToken from './utils/setAuthorizationToken';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 if (localStorage.token && localStorage.token !== "undefined") {
   setAuthorizationToken(localStorage.token);

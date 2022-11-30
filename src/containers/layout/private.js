@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Authenticator } from "../../actions/auth";
+import {MDBContainer} from "mdb-react-ui-kit";
+import Header from "../../components/common/header";
 function PrivateLayout({ children }) {
   /***
    * 1. List user events
@@ -57,7 +58,8 @@ function PrivateLayout({ children }) {
 
   return (
     <div>
-      {children}
+        <Header logoutUser={logoutUser}/>
+        <MDBContainer fluid className="mt-5">{children}</MDBContainer> 
     </div>
   );
 }

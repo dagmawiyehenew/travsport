@@ -43,12 +43,11 @@ export const callCollocation = async () => {
 
         if (!res.error) {
           // Get all new stared race
-          const _new = result.filter(
+          const _new = result?.filter(
             (collection) =>
               collection.horse.id !== res.data.horse.id && collection.time <= 0
           );
-          const _update = result
-            .filter(
+          const _update = result?.filter(
               (collection) =>
                 collection.horse.id === res.data.horse.id && collection.time > 1
             )
@@ -59,7 +58,7 @@ export const callCollocation = async () => {
           //console.log("_new", _new);
           //console.log("_update", _update);
           //console.log("_newCollection", _new.concat(_update));
-          return _new.concat(_update);
+          return _new?.concat(_update);
         }
       })
   };
