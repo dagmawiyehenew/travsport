@@ -121,6 +121,14 @@ You will need to be authenticated to use the backend API. Authenticate with an e
 
 Optional : useQuery or redux saga is a perfect hook you possibly can use in this case. 
 
-npm i mdb-react-ui-kit
-npm i @fortawesome/fontawesome-free
+
+4 - Ui computes 
+* npm i mdb-react-ui-kit
+* npm i @fortawesome/fontawesome-free
   
+### Left overs 
+
+- Handel slow response
+- Styling on components
+- Jest unit test
+- Docker image
